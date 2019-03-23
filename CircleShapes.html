@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+        	let button;
+function setup() {
+  createCanvas(900,400);
+  button=createButton("Clear");
+  button.position(5,380);
+  button.mousePressed(clr);
+}
+function draw() {
+fill(random(255),random(255),random(255));
+noStroke();
+variableEllipse(mouseX, mouseY, pmouseX, pmouseY);
+
+}
+
+
+function variableEllipse(x, y, px, py) {
+  let speed = abs(x - px) + abs(y - py);
+  stroke(speed);
+  ellipse(x, y, speed, speed);
+}
+function clr()
+{
+
+   clear();
+}
+        </script>
+    </body>
+</html>
